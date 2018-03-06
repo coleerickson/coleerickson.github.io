@@ -20,7 +20,13 @@
           document.getElementById('coles').innerText = text;
         }
       }
+
       document.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('touchstart', (event) => {
+          text += 'cole'[i];
+          i = (i + 1) % 4;
+          window.scrollTo(0, document.body.scrollHeight);
+        });
         document.addEventListener('keypress', (event) => {
           if (event.code == 'Enter') {
             text += '\n';
