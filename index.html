@@ -4,12 +4,34 @@
     <meta charset="utf-8">
     <title>colecolecole</title>
   </head>
-  <body>
-    <div id="coles" style="font-family:Arial,sans-serif;text-align:center;font-weight:bold;overflow-wrap:break-word;">colecolecole</div>
+  <body style="background-color:#fdf6e2;color:#201e09;">
+    <div id="coles" style="font-family:Courier New,monospace;font-weight:bold;overflow-wrap:break-word;">colecolecole</div>
     <script>
-      document.addEventListener('keypress', (event) => {
-        const keyName = event.key;
-        document.getElementById('coles').innerText += 'cole';
+      var text = 'colecolecole';
+      var isUnderscoreDisplayed = false;
+      var i = 0;
+      function render() {
+        if (isUnderscoreDisplayed) {
+          document.getElementById('coles').innerText = text + '_';
+        } else {
+          document.getElementById('coles').innerText = text;
+        }
+      }
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('keypress', (event) => {
+          console.log(event.code);
+          if (event.code == 'Enter') {
+            text += '\n';
+            return;
+          }
+          text += 'cole'[i];
+          i = (i + 1) % 4;
+          render();
+        });
+        setInterval(() => {
+          isUnderscoreDisplayed = !isUnderscoreDisplayed;
+          render();
+        }, 500);
       });
     </script>
   </body>
