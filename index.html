@@ -10,7 +10,7 @@
       var text = 'colecolecole';
       var isUnderscoreDisplayed = false;
       var i = 0;
-      function render() {
+      function renderText() {
         if (isUnderscoreDisplayed) {
           document.getElementById('coles').innerText = text + '_';
         } else {
@@ -25,11 +25,12 @@
             text += 'cole'[i];
             i = (i + 1) % 4;
           }
-          render();
+          window.scrollTo(0, document.body.scrollHeight);
+          renderText();
         });
         setInterval(() => {
           isUnderscoreDisplayed = !isUnderscoreDisplayed;
-          render();
+          renderText();
         }, 500);
       });
     </script>
