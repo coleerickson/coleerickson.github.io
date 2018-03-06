@@ -19,13 +19,12 @@
       }
       document.addEventListener('DOMContentLoaded', (event) => {
         document.addEventListener('keypress', (event) => {
-          console.log(event.code);
           if (event.code == 'Enter') {
             text += '\n';
-            return;
+          } else {
+            text += 'cole'[i];
+            i = (i + 1) % 4;
           }
-          text += 'cole'[i];
-          i = (i + 1) % 4;
           render();
         });
         setInterval(() => {
