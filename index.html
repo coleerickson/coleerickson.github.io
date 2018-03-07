@@ -2,13 +2,48 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>colecolecole</title>
+    <style>
+      body {
+        font-family: Courier, monospace;
+        background-color: #fdf6e2;
+        color: #201e09;
+      }
+
+      #container {
+        margin: 10% 10% 0 10%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      #coles {
+         font-weight: bold;
+         overflow-wrap: break-word;]
+      }
+
+      h1 {
+        font-family: Georgia, serif;
+        font-weight: bold;
+        font-size: 4em;
+        margin: 0 0 10px 0;
+      }
+
+      @media only screen and (max-width: 768px) {
+        h1 {
+          font-size: 2em;
+        }
+      }
+    </style>
   </head>
-  <body style="font-family:Courier,monospace;background-color:#fdf6e2;color:#201e09;">
-    <a style="color:inherit;text-decoration:none;" href="/">
-      <div style="font-family:Georgia,serif;font-weight:bold;font-size:4em;margin:1em 100px 0 100px;">colecolecole</div>
-    </a>
-    <div id="coles" style="font-weight:bold;overflow-wrap:break-word;margin:1em 100px 0 100px;">colecolecole</div>
+  <body>
+    <div id="container">
+      <h1>colecolecole</h1>
+      <div id="coles">colecolecole</div>
+    </div>
     <script>
       var text = 'colecolecole';
       var isUnderscoreDisplayed = false;
